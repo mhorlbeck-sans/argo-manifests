@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: main-team-apps
+  name: sans-cpe-app-000
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/mhorlbeck-sans/argo-manifests.git
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD
-    path: app-of-apps-pattern/definitions
+    path: guestbook
   destination:
     server: https://kubernetes.default.svc
-    namespace: app-of-apps
+    namespace: app-000
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
