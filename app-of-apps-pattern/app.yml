@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/mhorlbeck-sans/argo-manifests.git
     targetRevision: HEAD
-    path: app-of-apps-pattern
+    path: app-of-apps-pattern/definitions
   destination:
     server: https://kubernetes.default.svc
     namespace: app-of-apps
