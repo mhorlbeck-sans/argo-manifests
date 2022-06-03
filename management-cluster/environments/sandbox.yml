@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/mhorlbeck-sans/argo-manifests.git
     targetRevision: HEAD
-    path: management-cluster/sandbox
+    path: management-cluster/environments/sandbox
   destination:
     server: https://kubernetes.default.svc
     namespace: app-of-apps
