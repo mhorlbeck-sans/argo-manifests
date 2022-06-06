@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: sandbox-apps
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
