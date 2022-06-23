@@ -11,7 +11,7 @@ spec:
     path: guestbook
   destination:
     server: https://kubernetes.default.svc
-    namespace: test-guestbook-app
+    namespace: test-guestbook-app-002
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
