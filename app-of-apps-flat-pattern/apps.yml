@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: main-apps
+  name: main-apps-develop
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/mhorlbeck-sans/argo-manifests.git
-    targetRevision: HEAD
+    targetRevision: env/develop
     path: app-of-apps-flat-pattern/definitions
   destination:
     server: https://kubernetes.default.svc
