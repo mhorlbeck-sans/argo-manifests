@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/mhorlbeck-sans/argo-manifests.git
-    targetRevision: HEAD
+    targetRevision: env/sandbox
     path: app-of-apps-flat-pattern/definitions
   destination:
     server: https://kubernetes.default.svc
