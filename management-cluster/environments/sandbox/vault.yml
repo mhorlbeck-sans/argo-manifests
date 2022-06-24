@@ -5,6 +5,9 @@ metadata:
   namespace: argocd
 spec:
   project: default
+  ignoreDifferences:
+    - group: apps
+      kind: MutatingWebhookConfiguration
   source:
     chart: vault
     repoURL: https://helm.releases.hashicorp.com
