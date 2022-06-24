@@ -8,6 +8,7 @@ spec:
   source:
     chart: hashicorp-vault
     repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 1.10.3
     helm:
       releaseName: hashicorp-vault
   destination:
