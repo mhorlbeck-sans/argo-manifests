@@ -1,0 +1,26 @@
+apiVersion: policy.jspolicy.com/v1beta1
+kind: JsPolicy
+metadata:
+  namespace: jspolicy
+  name: enforce-argocd-app-of-apps-targetbranch.sans.org
+spec:
+  type: Mutating
+  operations: ["CREATE", "UPDATE"]
+  resources:
+    - applications
+  objectSelector:
+    matchLabels:
+      argocd/app-of-apps: "true"
+  javascript: |
+    if (request.object) {
+      const application = request.object;
+      const configMap = get("ConfigMap", "v1", "argocd/argocd-app-of-apps-gitops-branch");
+      if (!configMap) {
+        warn("no argocd/app-of-apps-gitops-branch ConfigMap available");
+      }
+
+      if (configMap.data) {
+        application.spec.source.targetRevision = configMap.data.branch;
+        mutate(application);
+      }
+    }
